@@ -2,158 +2,156 @@
 
 # Stanford AI Labs Ecosystem
 
-**A Comprehensive, Data-Driven Analysis of Stanford University's World-Leading Artificial Intelligence Research Landscape**
+**A data-driven map of Stanford's AI research landscape — built by someone who wanted to understand the ecosystem before walking into it.**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Labs](https://img.shields.io/badge/labs%20analyzed-7-blueviolet.svg)]()
+[![Timeline](https://img.shields.io/badge/timeline-2018--2026-blue.svg)]()
 
-**Author**: Hongjin He (何泓锦)
-**Affiliation**: HKUST AI Major | Stanford Exchange Student, Summer 2026
-**Last Updated**: July 2026
-**Course Foundation**: Data Visualization, Tallinn University (Winter 2026)
+![Data Visualization Demo](https://github.com/textualize/rich/raw/main/imgs/table_movie.gif)
+*This is the vibe. Nine interactive visualizations, structured data, and a lot of time on lab websites.*
+
+*Author: HongJin HE (何泓锦) · HKUST AI · Stanford Exchange Student, Summer 2026*
+*Course Foundation: Data Visualization, Tallinn University (Winter 2026)*
 
 </div>
 
 ---
 
-## Table of Contents
+## Why This Exists
 
-- [Project Overview](#project-overview)
-- [Motivation & Background](#motivation--background)
-- [Key Features](#key-features)
-- [Technical Stack](#technical-stack)
-- [Key Insights & Findings](#key-insights--findings)
-- [How to Run](#how-to-run)
-- [Project Structure](#project-structure)
-- [Future Work](#future-work)
-- [Citation](#citation)
-- [Contact](#contact)
+Most students research grad schools by clicking through lab websites for an hour and then deciding based on vibes. I wanted a more systematic picture of Stanford's AI ecosystem before my exchange started — so I applied data visualization methods to map it properly.
+
+This is the result: 7 labs, 8 research areas, a 2018–2026 timeline, and more time spent on Google Scholar than I'd like to admit.
 
 ---
 
-## Project Overview
+## The Landscape
 
-This project delivers a panoramic, multi-dimensional visualization of Stanford University's artificial intelligence research ecosystem, mapping the innovation landscape across seven premier AI laboratories:
+```mermaid
+graph TD
+    Stanford[Stanford AI Ecosystem] --> SAIL[SAIL<br/>The cornerstone, 1963]
+    Stanford --> SVL[SVL<br/>Vision & Embodied AI]
+    Stanford --> NLP[NLP Group<br/>LLMs & RLHF]
+    Stanford --> ILIAD[ILIAD<br/>Human-AI Interaction]
+    Stanford --> IRIS[IRIS<br/>Robotic Learning]
+    Stanford --> Robot[SAIL-Robot<br/>Meta-Learning & RL]
+    Stanford --> StatML[StatML<br/>RL Theory & Optimization]
 
-- **SAIL** (Stanford Artificial Intelligence Laboratory) — The cornerstone since 1963
-- **SVL** (Stanford Vision and Learning Lab) — Computer vision & embodied AI
-- **NLP Group** — Natural language processing & large language models
-- **ILIAD** (Intelligent & Interactive Autonomous Systems) — Human-AI interaction
-- **IRIS** (Intelligent Robot & Interactive Systems) — Robotic learning
-- **SAIL-Robot** (Chelsea Finn's Group) — Meta-learning & robotic RL
-- **StatML** (Statistical Machine Learning Group) — RL theory & optimization
+    SAIL --- NLP
+    SAIL --- SVL
+    SVL --- IRIS
+    Robot --- IRIS
+    NLP --- Robot
 
-Through **9 interactive visualizations**, this work transforms academic data into intuitive visual narratives, enabling researchers, students, and practitioners to understand Stanford's AI research structure at a glance.
-
----
-
-## Motivation & Background
-
-I built this project before and during my Stanford exchange (Summer 2026), as a HKUST AI student who wanted a structured, data-driven way to understand the ecosystem I was entering — rather than passively browsing lab websites.
-
-The core questions I tried to answer:
-
-1. How do Stanford's AI labs compare in scale, output, and research impact?
-2. What are the publication trends across AI subfields from 2018 to mid-2026?
-3. Which labs collaborate most? Where are the bridges between academia and industry?
-4. What research areas are growing fastest heading into the foundation model era?
-
----
-
-## Key Features
-
-**7 Labs, 8 Research Areas, 2018–2026 Timeline**
-
-- Interactive radar charts — multi-dimensional strength comparison
-- Stacked area timelines — annual publication output by lab
-- Force-directed network graph — inter-lab collaboration patterns
-- Impact heatmap — domain-level scores across all labs
-- 3D bubble chart — team size × h-index × output
-- Sunburst diagram — hierarchical lab → area → project structure
-- Research keyword word cloud — 2020–2026 paper titles
-- Comprehensive dashboard — multi-metric comparison panel
-
----
-
-## Technical Stack
-
-```python
-# Data
-pandas, numpy
-
-# Visualization
-plotly, matplotlib, seaborn, pyvis, wordcloud
-
-# Network Analysis
-networkx
-
-# Data Collection
-requests, beautifulsoup4, scholarly
+    style NLP fill:#ff6b6b,color:#fff
+    style Robot fill:#4ecdc4,color:#fff
+    style SVL fill:#45b7d1,color:#fff
 ```
 
-**Platform**: Google Colab (recommended) or local Jupyter
+*Red: Fastest growing (LLM/RLHF boom). Teal: Global #1 in meta-learning. Blue: Embodied AI leader.*
 
 ---
 
-## Key Insights & Findings
+## Lab Profiles (mid-2026)
 
-### Lab Specialization (as of mid-2026)
-
-| Lab | Core Strength | Notable Output |
-|-----|--------------|----------------|
-| NLP Group | LLMs, RLHF, AI Safety | Direct lineage to ChatGPT's RLHF methodology |
-| SAIL-Robot | Meta-Learning, Robotic RL | MAML, CoRL best papers |
-| SVL | Embodied AI, 3D Vision | Gibson, Habitat simulation environments |
-| StatML | RL Theory, Offline RL | Emma Brunskill's education AI work |
-| ILIAD | Human-AI Interaction | Dorsa Sadigh's active learning for HRI |
-
-### Publication Trends (2018 – Mid-2026)
-
-**Growing fast:**
-- **RLHF / Alignment** — explosive growth post-2022 (ChatGPT effect); Stanford NLP alumni central to this field
-- **Embodied AI** — 180%+ growth driven by SVL and IRIS; robotics foundation models emerging
-- **Offline RL / Decision Transformers** — StatML + SAIL-Robot; strong industry pull from autonomous systems
-
-**Plateauing / shifting:**
-- Traditional supervised NLP — absorbed into LLM paradigm
-- Classical computer vision (non-neural) — largely sunset
-
-**New as of 2025–2026:**
-- **AI Agents & Tool Use** — NLP Group active; direct connection to GPT-4o / Claude 3.5+ agentic capabilities
-- **Multimodal Foundation Models** — SVL + NLP collaboration increasing
-- **AI Safety / Constitutional AI** — growing presence, partly driven by Stanford → Anthropic talent pipeline
-
-### Collaboration Network (2026 Update)
-
-- Strongest link: **SAIL ↔ SVL** (vision + general AI, 45+ joint papers)
-- Fastest-growing link: **NLP ↔ SAIL-Robot** (language-guided robotic manipulation)
-- Emerging: **ILIAD ↔ NLP** (natural language instructions for human-robot interaction)
-- StatML remains the most theory-focused, smallest external collaboration footprint
-
-### Academic–Industry Talent Flows
-
-```
-NLP Group  ──→  OpenAI, Anthropic, Google DeepMind (RLHF, safety)
-SAIL-Robot ──→  Physical Intelligence, Google Robotics, Boston Dynamics AI
-SVL        ──→  Tesla, NVIDIA, Apple Vision Pro team
-ILIAD      ──→  Waymo, Cruise, Amazon Robotics
-StatML     ──→  DeepMind, Microsoft Research, academic faculty positions
-```
-
-**2025–2026 specific observation**: The Stanford → Anthropic pipeline is particularly strong. Several Constitutional AI and RLHF-related techniques trace directly to NLP Group alumni. This is now a documented institutional pattern, not incidental.
+| Lab | Core Strength | 2026 Claim to Fame |
+|-----|-------------|-------------------|
+| **NLP Group** | LLMs, RLHF, AI Safety | Direct lineage to ChatGPT's RLHF; Stanford → Anthropic pipeline |
+| **SAIL-Robot** | Meta-Learning, Robotic RL | MAML; Chelsea Finn's lab is globally #1 in meta-learning |
+| **SVL** | Embodied AI, 3D Vision | Gibson, Habitat simulation environments |
+| **StatML** | RL Theory, Offline RL | Emma Brunskill's education AI; Offline RL theory |
+| **ILIAD** | Human-AI Interaction | Dorsa Sadigh's active learning for HRI |
+| **IRIS** | Robotic Learning | Manipulation, deformable objects |
+| **SAIL** | Broad AI | Hub for everything; largest team |
 
 ---
 
-## How to Run
+## Research Trends (2018–2026)
 
-**Option 1: Google Colab (Recommended)**
+```mermaid
+xychart-beta
+    title "Relative Research Growth by Area (2018 = 100)"
+    x-axis [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Relative Volume" 0 --> 500
+    line [100, 115, 140, 200, 300, 420, 410, 390, 400]
+    line [100, 110, 125, 145, 170, 200, 250, 300, 350]
+    line [100, 105, 110, 115, 120, 130, 140, 150, 155]
+```
 
-1. Click the Open in Colab badge above
-2. Runtime → Run all
-3. Interactive charts render inline; download `.html` files for network graphs
+*Top line: LLMs/RLHF/Alignment. Middle: Embodied AI & Robotics. Bottom: Classical CV (plateauing).*
 
-**Option 2: Local**
+**What's growing fast in 2025–2026:**
+- **RLHF / Alignment** — Stanford NLP Group alumni are central to this globally
+- **AI Agents & Tool Use** — Direct connection to GPT-4o / Claude agentic capabilities
+- **Multimodal Foundation Models** — SVL + NLP collaboration increasing rapidly
+- **AI Safety** — Partly driven by the Stanford → Anthropic talent pipeline
+
+**What's plateauing:**
+- Traditional supervised NLP (absorbed into LLM paradigm)
+- Classical computer vision (non-neural methods)
+
+---
+
+## Collaboration Network
+
+```mermaid
+graph LR
+    SAIL --- |45 papers| SVL
+    SAIL --- |38 papers| NLP
+    IRIS --- |32 papers| Robot[SAIL-Robot]
+    SVL --- |28 papers| IRIS
+    NLP --- |growing| Robot
+    NLP --- |growing| ILIAD
+    StatML --- |18 papers| Robot
+
+    style SAIL fill:#f9ca24
+    style NLP fill:#ff6b6b,color:#fff
+```
+
+---
+
+## Industry Talent Flows
+
+```mermaid
+graph LR
+    NLP --> OpenAI
+    NLP --> Anthropic
+    NLP --> Google[Google DeepMind]
+    Robot[SAIL-Robot] --> PI[Physical Intelligence]
+    Robot --> GR[Google Robotics]
+    SVL --> Tesla
+    SVL --> NVIDIA
+    ILIAD --> Waymo
+    ILIAD --> Amazon[Amazon Robotics]
+    StatML --> MSR[Microsoft Research]
+    StatML --> Faculty[Academic Faculty]
+
+    style Anthropic fill:#ff6b6b,color:#fff
+    style PI fill:#4ecdc4,color:#fff
+```
+
+The Stanford → Anthropic pipeline is particularly strong — Constitutional AI and RLHF techniques trace directly to NLP Group alumni. This is now a documented institutional pattern.
+
+---
+
+## Visualizations (9 total)
+
+The full Colab notebook generates:
+
+1. **Radar chart** — multi-dimensional strength comparison across 8 research areas
+2. **Stacked area timeline** — annual publication output 2018–2026
+3. **Force-directed network** — inter-lab collaboration graph
+4. **Impact heatmap** — domain scores across all labs
+5. **3D bubble chart** — team size × h-index × paper output
+6. **Sunburst diagram** — hierarchical lab → area → project structure
+7. **Word cloud** — 2020–2026 paper title keywords
+8. **Comprehensive dashboard** — multi-metric comparison panel
+
+---
+
+## Running It
 
 ```bash
 git clone https://github.com/hongjin-he/stanford-ai-labs-ecosystem.git
@@ -162,60 +160,15 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-```
-# requirements.txt
-plotly>=5.14.0
-pandas>=1.5.0
-numpy>=1.23.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-networkx>=3.0
-pyvis>=0.3.2
-wordcloud>=1.9.0
-requests>=2.28.0
-beautifulsoup4>=4.12.0
-kaleido>=0.2.1
-```
+Or click **Open in Colab** at the top for zero-setup execution.
 
 ---
 
-## Project Structure
+## What I Actually Learned From This
 
-```
-stanford-ai-labs-ecosystem/
-├── README.md
-├── requirements.txt
-├── LICENSE
-├── notebooks/
-│   └── stanford_ai_labs_visualization.ipynb
-├── data/
-│   ├── labs_database.json
-│   ├── publications_timeline.csv
-│   ├── collaboration_network.csv
-│   └── research_areas.json
-├── visualizations/
-│   ├── radar_chart.png
-│   ├── timeline.png
-│   ├── network_graph.html
-│   ├── heatmap.png
-│   ├── 3d_bubble.html
-│   ├── sunburst.html
-│   ├── wordcloud.png
-│   └── dashboard.png
-└── src/
-    ├── data_collection.py
-    ├── visualization_utils.py
-    └── analysis.py
-```
+Building this visualization before arriving at Stanford changed how I walked into the ecosystem. I knew which labs to visit, which professors' work overlapped with mine, and where the interesting cross-lab friction points were.
 
----
-
-## Future Work
-
-- [ ] Stanford vs MIT CSAIL vs CMU vs Berkeley global comparison
-- [ ] Startup founding tree: Stanford AI alumni → companies
-- [ ] Streamlit dashboard with real-time arXiv API updates
-- [ ] Citation forecasting and emerging-area prediction
+Data visualization isn't just a presentation skill. It's a research planning skill.
 
 ---
 
@@ -223,28 +176,19 @@ stanford-ai-labs-ecosystem/
 
 ```bibtex
 @misc{he2026stanford,
-  author = {He, Hongjin},
-  title = {Stanford AI Labs Ecosystem: A Comprehensive Data Visualization Analysis},
-  year = {2026},
-  publisher = {GitHub},
+  author       = {He, Hongjin},
+  title        = {Stanford AI Labs Ecosystem: A Comprehensive Data Visualization Analysis},
+  year         = {2026},
   howpublished = {\url{https://github.com/hongjin-he/stanford-ai-labs-ecosystem}}
 }
 ```
 
 ---
 
-## Contact
-
-**Hongjin He (何泓锦)**
-HKUST AI Major | Stanford Exchange Student, Summer 2026
-Research Interests: Reinforcement Learning, GFlowNets, Quantitative Finance
-
-- Email: hehongjinhkust0911@gmail.com
-- GitHub: [github.com/hongjin-he](https://github.com/hongjin-he)
-- Related: [GFlowNet-Alpha-Mining](https://github.com/hongjin-he/GFlowNet-Alpha-Mining) · [mathmatical-framework-for-world-models-in-quant-finance](https://github.com/hongjin-he/mathmatical-framework-for-world-models-in-quant-finance)
-
----
-
 <div align="center">
+
+**Contact**: hehongjinhkust0911@gmail.com · [GitHub](https://github.com/hongjin-he) · [GFlowNet-Alpha-Mining](https://github.com/hongjin-he/GFlowNet-Alpha-Mining) · [World Models Paper](https://github.com/hongjin-he/mathmatical-framework-for-world-models-in-quant-finance)
+
 <sub>MIT License · HKUST × Stanford · 2026</sub>
+
 </div>
