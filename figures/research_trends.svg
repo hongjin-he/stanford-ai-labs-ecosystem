@@ -1,0 +1,142 @@
+<svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Arial, sans-serif">
+  <defs>
+    <marker id="ax" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#4A5568"/>
+    </marker>
+  </defs>
+
+  <rect width="860" height="500" fill="#FAFBFC" rx="8"/>
+  <text x="430" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#1A202C">Stanford AI Research Volume by Area (2018–2026)</text>
+  <text x="430" y="50" text-anchor="middle" font-size="10.5" fill="#718096">Relative publication output indexed to 2018 = 100 · Based on lab websites, Google Scholar, ArXiv</text>
+  <line x1="40" y1="60" x2="820" y2="60" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Chart area: x=90..820, y=80..410 -->
+
+  <!-- Y-axis grid lines and labels -->
+  <!-- 500 → y=80, 400 → y=116, 300 → y=152 (approx, total range 0-520, height 330) -->
+  <!-- y_px = 410 - (value/520)*330 -->
+  <!-- 0→410, 100→347, 200→284, 300→221, 400→158, 500→95 -->
+
+  <!-- Gridlines -->
+  <line x1="90" y1="95"  x2="820" y2="95"  stroke="#EDF2F7" stroke-width="1"/>
+  <line x1="90" y1="158" x2="820" y2="158" stroke="#EDF2F7" stroke-width="1"/>
+  <line x1="90" y1="221" x2="820" y2="221" stroke="#EDF2F7" stroke-width="1"/>
+  <line x1="90" y1="284" x2="820" y2="284" stroke="#EDF2F7" stroke-width="1"/>
+  <line x1="90" y1="347" x2="820" y2="347" stroke="#EDF2F7" stroke-width="1"/>
+  <line x1="90" y1="410" x2="820" y2="410" stroke="#CBD5E0" stroke-width="1"/>
+
+  <!-- Y-axis labels -->
+  <text x="82" y="99"  text-anchor="end" font-size="9.5" fill="#718096">500</text>
+  <text x="82" y="162" text-anchor="end" font-size="9.5" fill="#718096">400</text>
+  <text x="82" y="225" text-anchor="end" font-size="9.5" fill="#718096">300</text>
+  <text x="82" y="288" text-anchor="end" font-size="9.5" fill="#718096">200</text>
+  <text x="82" y="351" text-anchor="end" font-size="9.5" fill="#718096">100</text>
+  <text x="82" y="414" text-anchor="end" font-size="9.5" fill="#718096">0</text>
+
+  <!-- Y-axis title -->
+  <text transform="rotate(-90,22,245)" x="22" y="245" text-anchor="middle" font-size="10" fill="#4A5568">Relative Research Volume (2018=100)</text>
+
+  <!-- Axes -->
+  <line x1="90" y1="80" x2="90" y2="418" stroke="#CBD5E0" stroke-width="1.5"/>
+  <line x1="90" y1="410" x2="828" y2="410" stroke="#CBD5E0" stroke-width="1.5" marker-end="url(#ax)"/>
+
+  <!-- X-axis: years 2018..2026 → positions  -->
+  <!-- 9 years, span 90..820 = 730px, step=730/8=91.25 -->
+  <!-- x(2018)=90, x(2019)=181, x(2020)=272, x(2021)=363, x(2022)=454, x(2023)=545, x(2024)=636, x(2025)=727, x(2026)=818 -->
+  <text x="90"  y="428" text-anchor="middle" font-size="9.5" fill="#718096">2018</text>
+  <text x="181" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2019</text>
+  <text x="272" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2020</text>
+  <text x="363" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2021</text>
+  <text x="454" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2022</text>
+  <text x="545" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2023</text>
+  <text x="636" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2024</text>
+  <text x="727" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2025</text>
+  <text x="818" y="428" text-anchor="middle" font-size="9.5" fill="#718096">2026</text>
+
+  <!-- ===== SERIES 1: LLMs / RLHF / Alignment (red-ish) ===== -->
+  <!-- values: 100,115,140,200,300,420,410,390,400 -->
+  <!-- y = 410 - (v/520)*330 -->
+  <!-- 100→347, 115→337, 140→321, 200→283, 300→220, 420→143, 410→150, 390→163, 400→157 -->
+  <polyline points="90,347 181,337 272,321 363,283 454,220 545,143 636,150 727,163 818,157"
+    fill="none" stroke="#E53E3E" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Dots -->
+  <circle cx="90"  cy="347" r="4" fill="#E53E3E"/>
+  <circle cx="181" cy="337" r="4" fill="#E53E3E"/>
+  <circle cx="272" cy="321" r="4" fill="#E53E3E"/>
+  <circle cx="363" cy="283" r="4" fill="#E53E3E"/>
+  <circle cx="454" cy="220" r="4" fill="#E53E3E"/>
+  <circle cx="545" cy="143" r="5" fill="#E53E3E"/>
+  <circle cx="636" cy="150" r="4" fill="#E53E3E"/>
+  <circle cx="727" cy="163" r="4" fill="#E53E3E"/>
+  <circle cx="818" cy="157" r="4" fill="#E53E3E"/>
+  <!-- Peak annotation -->
+  <text x="545" y="137" text-anchor="middle" font-size="8.5" fill="#E53E3E" font-weight="600">420 (peak)</text>
+
+  <!-- ===== SERIES 2: Embodied AI / Robotics (blue) ===== -->
+  <!-- values: 100,110,125,145,170,200,250,300,350 -->
+  <!-- y: 100→347, 110→340, 125→331, 145→318, 170→302, 200→283, 250→251, 300→220, 350→189 -->
+  <polyline points="90,347 181,340 272,331 363,318 454,302 545,283 636,251 727,220 818,189"
+    fill="none" stroke="#3182CE" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="90"  cy="347" r="4" fill="#3182CE"/>
+  <circle cx="181" cy="340" r="4" fill="#3182CE"/>
+  <circle cx="272" cy="331" r="4" fill="#3182CE"/>
+  <circle cx="363" cy="318" r="4" fill="#3182CE"/>
+  <circle cx="454" cy="302" r="4" fill="#3182CE"/>
+  <circle cx="545" cy="283" r="4" fill="#3182CE"/>
+  <circle cx="636" cy="251" r="4" fill="#3182CE"/>
+  <circle cx="727" cy="220" r="4" fill="#3182CE"/>
+  <circle cx="818" cy="189" r="4" fill="#3182CE"/>
+
+  <!-- ===== SERIES 3: RL Theory / Optimization (green) ===== -->
+  <!-- values: 100,110,118,130,145,160,175,185,192 -->
+  <!-- y: 100→347, 110→340, 118→335, 130→328, 145→318, 160→309, 175→299, 185→292, 192→288 -->
+  <polyline points="90,347 181,340 272,335 363,328 454,318 545,309 636,299 727,292 818,288"
+    fill="none" stroke="#38A169" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="90"  cy="347" r="4" fill="#38A169"/>
+  <circle cx="181" cy="340" r="4" fill="#38A169"/>
+  <circle cx="272" cy="335" r="4" fill="#38A169"/>
+  <circle cx="363" cy="328" r="4" fill="#38A169"/>
+  <circle cx="454" cy="318" r="4" fill="#38A169"/>
+  <circle cx="545" cy="309" r="4" fill="#38A169"/>
+  <circle cx="636" cy="299" r="4" fill="#38A169"/>
+  <circle cx="727" cy="292" r="4" fill="#38A169"/>
+  <circle cx="818" cy="288" r="4" fill="#38A169"/>
+
+  <!-- ===== SERIES 4: Classical CV / supervised NLP (gray, plateauing) ===== -->
+  <!-- values: 100,108,115,118,115,110,105,100,98 -->
+  <!-- y: 100→347, 108→342, 115→337, 118→335, 115→337, 110→340, 105→344, 100→347, 98→348 -->
+  <polyline points="90,347 181,342 272,337 363,335 454,337 545,340 636,344 727,347 818,348"
+    fill="none" stroke="#A0AEC0" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6,3"/>
+  <circle cx="90"  cy="347" r="3.5" fill="#A0AEC0"/>
+  <circle cx="545" cy="340" r="3.5" fill="#A0AEC0"/>
+  <circle cx="818" cy="348" r="3.5" fill="#A0AEC0"/>
+
+  <!-- GPT-3 event marker -->
+  <line x1="272" y1="82" x2="272" y2="410" stroke="#ECC94B" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="255" y="82" width="66" height="16" rx="3" fill="#FFFFF0" stroke="#ECC94B" stroke-width="1"/>
+  <text x="288" y="94" text-anchor="middle" font-size="8.5" fill="#975A16">GPT-3 (2020)</text>
+
+  <!-- ChatGPT event marker -->
+  <line x1="545" y1="82" x2="545" y2="410" stroke="#F6AD55" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <rect x="517" y="82" width="80" height="16" rx="3" fill="#FFFFF0" stroke="#F6AD55" stroke-width="1.2"/>
+  <text x="557" y="94" text-anchor="middle" font-size="8.5" fill="#975A16">ChatGPT (2022)</text>
+
+  <!-- ===== Legend ===== -->
+  <rect x="92" y="448" width="760" height="40" rx="5" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Series 1 -->
+  <line x1="108" y1="468" x2="128" y2="468" stroke="#E53E3E" stroke-width="2.5"/>
+  <circle cx="118" cy="468" r="3.5" fill="#E53E3E"/>
+  <text x="133" y="472" font-size="9.5" fill="#4A5568">LLMs / RLHF / Alignment (NLP Group)</text>
+  <!-- Series 2 -->
+  <line x1="328" y1="468" x2="348" y2="468" stroke="#3182CE" stroke-width="2.5"/>
+  <circle cx="338" cy="468" r="3.5" fill="#3182CE"/>
+  <text x="353" y="472" font-size="9.5" fill="#4A5568">Embodied AI / Robotics (SVL + IRIS + SAIL-Robot)</text>
+  <!-- Series 3 -->
+  <line x1="578" y1="468" x2="598" y2="468" stroke="#38A169" stroke-width="2.5"/>
+  <circle cx="588" cy="468" r="3.5" fill="#38A169"/>
+  <text x="603" y="472" font-size="9.5" fill="#4A5568">RL Theory (StatML + ILIAD)</text>
+  <!-- Series 4 -->
+  <line x1="713" y1="468" x2="733" y2="468" stroke="#A0AEC0" stroke-width="2" stroke-dasharray="5,2"/>
+  <circle cx="723" cy="468" r="3.5" fill="#A0AEC0"/>
+  <text x="738" y="472" font-size="9.5" fill="#A0AEC0">Classical CV / supervised NLP</text>
+</svg>
